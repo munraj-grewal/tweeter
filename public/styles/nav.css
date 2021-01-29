@@ -6,7 +6,7 @@ nav {
   padding: 1.5em 1.5em 1.5em 1.5em;
   position: fixed;
 }
-
+/* style for the compose button */
 nav #new-tweet-button {
   font-family: 'Bungee', sans-serif;
   border: none;

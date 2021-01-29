@@ -1,3 +1,4 @@
+/* styles for header */
 header {
   height: auto;
   width: 100%;
@@ -14,6 +15,7 @@ div {
   display: flex;
 }
 
+/* styles for other screen sizes */
 @media only screen and (min-width: 1024px) {
   header {
     height: auto;
