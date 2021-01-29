@@ -18,8 +18,19 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: Lato;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ @media only screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center;
+    height: auto;
+    color: black;
+  }
+}

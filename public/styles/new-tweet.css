@@ -1,0 +1,45 @@
+.new-tweet{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.tweet-button {
+  font-family: 'Bungee', sans-serif;
+  border: none;
+  background-color: #4056A1;
+  color: #ffffff;
+}
+
+.tweet-button:hover {
+  background-color: #c2ba1b;;
+}
+
+.submit-tweet {
+  font-family: 'Bungee', sans-serif;
+  font-size: 16px;
+  margin-top: 5px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+h3 {
+  color: red;
+}
+.minus-counter {
+  color: red;
+}
+
+#tweet-text {
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  resize: none;
+  overflow: auto;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+  line-height: 1;
+}

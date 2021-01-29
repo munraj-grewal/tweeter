@@ -1,0 +1,40 @@
+header {
+  height: auto;
+  width: 100%;
+  background-color: #00bdd6;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: auto;
+  padding-top: 150px;
+}
+
+div {
+  display: flex;
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    height: auto;
+    width: 100%;
+    background-color: #00bdd6;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: auto;
+  }
+}
+@media only screen and (min-width: 768px) and(max-width: 1024px) {
+  header {
+    height: auto;
+    width: 100%;
+    background-color: #00bdd6;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: auto;
+  }
+}
