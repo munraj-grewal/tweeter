@@ -1,13 +1,7 @@
 $(document).ready(function () {
-  $("#tweet-text").on('keyup', function () {
-    const max = 140;
-    let input = $('#tweet-text')[0].value;
-    let howMuchLeft = max - input.length;
-    if (howMuchLeft > 0){
-      $(this).parent().find(".counter").text(howMuchLeft);
-    } else {
-      $(this).parents().find(".counter").text(howMuchLeft)
-      .css("color", "red");
-    }
+  $('#tweet-text').on('input', function() {
+    let minusCounter = 140 - $(this).val().length;
+    let changeCounter = $(this).siblings().children('.counter').html(minusCounter);
+    changeCounter.toggleClass('minus-counter', minusCounter < 0);
   });
 });

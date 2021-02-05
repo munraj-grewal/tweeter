@@ -28,23 +28,25 @@ $(document).ready(function(){
       $("#tweets-container").prepend($(createTweetElement(tweet)));
     }
   }
-
   //create and show tweet when form is submitted
   $("form").on("submit",function(event){
     event.preventDefault(event);
-    let serial = $(this).serialize();
-    if(serial.length < 141){
+    let serial= $(this).serialize();
+    if (serial instanceof Error){
+      $(".error").html("tweet is empty").slideDown();
+    } else if(serial.length < 141 && serial.length > 0){
       if ($(".error").is(":visible") ){
         $(".error").slideUp();
       }
       $.post('/tweets', serial, function(response) {
+        $('#tweet-text').val('');
         loadLastTweet();
       });
     } else {
       $(".error").slideDown();
-    }
+    } 
+    
   });
-  
   //function to show the tweets on the page
   function loadTweets() {
     $.get("/tweets", function(response) {
@@ -65,10 +67,7 @@ $(document).ready(function(){
       $(".new-tweet").slideDown();
     }
   });
-
   $(".error").slideUp();
   $(".new-tweet").slideUp();
   loadTweets();
-
 });
-
