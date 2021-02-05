@@ -32,14 +32,13 @@ $(document).ready(function(){
   $("form").on("submit",function(event){
     event.preventDefault(event);
     let serial= $(this).serialize();
-    if (serial instanceof Error){
-      $(".error").html("tweet is empty").slideDown();
-    } else if(serial.length < 141 && serial.length > 0){
+    if(serial.length < 141 && serial.length > 0){
       if ($(".error").is(":visible") ){
         $(".error").slideUp();
       }
       $.post('/tweets', serial, function(response) {
         $('#tweet-text').val('');
+        $('.counter').val('140');
         loadLastTweet();
       });
     } else {
