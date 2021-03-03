@@ -1,13 +1,9 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  scroll-behavior: smooth;
 }
 
 /*
@@ -15,22 +11,49 @@ html {
  */
 
 body {
+  display: flex;
+  flex-direction: column;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: Lato;
+  margin-top: 4.2em;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+      display: flex;
+      flex-direction: row;
+  }
   .container {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    justify-content: center;
-    height: auto;
-    color: black;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 45%;
+  }
+  #navigation-header {
+      margin-right: 3rem;
+      margin-left: 3rem;
+      margin-top: 5em;
+      width: 40%
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+      display: flex;
+      flex-direction: row;
+  }
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 50%;
+  }
+  #navigation-header {
+      margin-right: 3rem;
+      margin-left: 3rem;
+      margin-top: 5em;
+      width: 40%
   }
 }

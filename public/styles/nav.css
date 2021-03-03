@@ -1,12 +1,15 @@
 nav {
-  height: 120px;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   background-color: #4056A1;
-  color: #FFFFFF;
-  padding: 1.5em 1.5em 1.5em 1.5em;
-  position: fixed;
+  color: #ffffff;
+  padding: 1.5em;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  height: 100px;
 }
-/* style for the compose button */
 nav #new-tweet-button {
   font-family: 'Bungee', sans-serif;
   border: none;

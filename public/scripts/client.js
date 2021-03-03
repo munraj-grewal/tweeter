@@ -1,6 +1,10 @@
 $(document).ready(function(){
   //creates a new article for each new tweet the user creates
   function createTweetElement(tweet) {
+    const dateObj = new Date(tweet.created_at);
+    const today = Date.now();
+    const timeDiff = Math.floor((today - dateObj) / 1000 / 60 / 60 / 24);
+
     return (
       `<article class="submitted-tweet">
         <header class="tweet-header">
@@ -12,7 +16,7 @@ $(document).ready(function(){
         </header>
         <p class="composed-tweet-message">${tweet.content.text}</p>
         <footer class="tweet-footer">
-          <p class="date-posted">${tweet.created_at}</p>
+          <p class="date-posted">${timeDiff} days ago</p>
           <div class="footerIcons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
@@ -32,17 +36,28 @@ $(document).ready(function(){
   $("form").on("submit",function(event){
     event.preventDefault(event);
     let serial= $(this).serialize();
-    if(serial.length < 141 && serial.length > 0){
-      if ($(".error").is(":visible") ){
+    console.log(serial)
+    if(serial.length < 141){
+      if ($(".error").is(":visible")){
         $(".error").slideUp();
       }
-      $.post('/tweets', serial, function(response) {
-        $('#tweet-text').val('');
-        $('.counter').val('140');
-        loadLastTweet();
-      });
+      if(serial.length > 5){
+        if ($(".error2").is(":visible")){
+          $(".error2").slideUp();
+        }
+        $.post('/tweets', serial, function(response) {
+          $('#tweet-text').val('');
+          $('.counter').val('140');
+          loadLastTweet();
+        });
+      } else {
+        $(".error2").slideDown();
+        $(".error").slideUp();
+      } 
     } else {
       $(".error").slideDown();
+      $(".error2").slideUp();
+
     } 
     
   });
@@ -67,6 +82,7 @@ $(document).ready(function(){
     }
   });
   $(".error").slideUp();
+  $(".error2").slideUp();
   $(".new-tweet").slideUp();
   loadTweets();
 });

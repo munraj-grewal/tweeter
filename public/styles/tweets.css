@@ -1,15 +1,15 @@
 /* styles the various parts of each tweet */
 
 .submitted-tweet {
-  display: flex;
-  flex-direction: column;
-  align-content: inherit;
-  border: solid black;
-  padding: 1em;
-  margin: 1em;
+  border: 3px solid #545149;
+  padding: 0 30px;
+  margin: 30px 0;
 }
 .submitted-tweet:hover {
   box-shadow: 5px 10px lightsteelblue;
+}
+.submitted-tweet:hover .user-handle{
+  opacity: 1;
 }
 
 .tweet-header {
@@ -30,6 +30,7 @@
 }
 
 .user-handle {
+  opacity: 0;
   align-self: center;
 }
 
@@ -56,12 +57,16 @@
   font-size: 18px;
 }
 
-.composed-tweeter-icons {
+.footerIcons {
   display: flex;
   align-items: center;
+  opacity: 0;
 }
 
-.composed-tweeter-icons i {
+.submitted-tweet:hover .footerIcons{
+  opacity: 1;
+}
+
+.footerIcons i {
   padding: 0 5px;
 }
-
